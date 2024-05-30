@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: agent-efs-pvc
+  namespace: jenkins
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: agent-efs-sc
+  volumeMode: Filesystem
+  volumeName: agent-efs-pv
+  resources:
+    requests:
+      storage: 5Gi
