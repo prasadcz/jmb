@@ -1,0 +1,13 @@
+controller:
+  image:
+    repository: docker.jumbotail.com/core_tools/karpenter/controller
+    tag: 0.36.0
+
+serviceAccount:
+  create: true
+  name: karpenter
+  annotations:
+    eks.amazonaws.com/role-arn: 'arn:aws:iam::440948357464:role/karpenter_controller_eks_role'
+
+settings:
+  clusterName: "nonprod_cluster"
