@@ -3,11 +3,11 @@ variable "env" {
 }
 
 variable "oidc_url" {
-  default = "oidc.eks.ap-southeast-1.amazonaws.com/id/9358F63536D222E420F63C3772459B6E"
+  default = "oidc.eks.ap-south-1.amazonaws.com/id/5E56C3347148F75B3D6316BB14A335E1"
 }
 
 variable "oidc_arn" {
-  default = "arn:aws:iam::440948357464:oidc-provider/oidc.eks.ap-southeast-1.amazonaws.com/id/9358F63536D222E420F63C3772459B6E"
+  default = "arn:aws:iam::552171489163:oidc-provider/oidc.eks.ap-south-1.amazonaws.com/id/5E56C3347148F75B3D6316BB14A335E1"
 }
 
 variable "namespace" {

@@ -1,10 +1,4 @@
 provider "aws" {
-  region                  = "ap-southeast-1"
-  profile                 = "nonprod"
+  region                  = "ap-south-1"
 }
 
-provider "aws" {
-  region                  = "ap-southeast-1"
-  profile                 = "jumbotail"
-  alias                   = "jumbotail"
-}
