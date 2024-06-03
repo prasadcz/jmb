@@ -1,0 +1,21 @@
+gateway:
+  hosts: kiali-dev.jumbotail.co
+
+external_services:
+  custom_dashboards:
+    enabled: true
+  grafana:
+    component_status:
+      app_label: grafana
+      is_core: true
+      namespace: infra
+    enabled: true
+    in_cluster_url: http://grafana.infra.svc.cluster.local:3000/
+    url: https://grafana-dev.jumbotail.co/?orgId=1
+  prometheus:
+    component_status:
+      app_label: prometheus
+      is_core: true
+      namespace: prometheus
+    custom_metrics_url: http://prometheus-server.prometheus.svc.cluster.local:80/
+    url: http://prometheus-server.prometheus.svc.cluster.local:80/

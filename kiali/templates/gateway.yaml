@@ -1,0 +1,21 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: {{ template "kiali-server.fullname" . }}-gateway
+  labels:
+    {{- include "kiali-server.labels" . | nindent 4 }}
+{{- if .Values.labels }}
+{{ toYaml .Values.labels | indent 4 }}
+{{- end }}
+  annotations:
+    {{- toYaml .Values.gateway.annotations | nindent 4 }} 
+spec:
+  selector:
+    istio: {{ default "ingressgateway" .Values.gateway.selector }}
+  servers:
+  - hosts:
+    - {{ .Values.gateway.hosts  }}
+    port:
+      number: {{ default "443" .Values.gateway.port_number }}
+      name: {{ default "https" .Values.gateway.port_name }}
+      protocol: {{ default "HTTP" .Values.gateway.port_protocol }}
